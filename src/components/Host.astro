@@ -1,0 +1,20 @@
+---
+import '../styles/host.css';
+import { site } from '../content/site';
+const h = site.host;
+---
+<section id="host" class="lf-host-sec lf-ivory" aria-labelledby="host-h">
+  <span class="lf-arc" aria-hidden="true" data-in></span>
+  <div class="lf-host">
+    {h.portrait ? (
+      <div class="lf-portrait"><img src={h.portrait} alt={h.portraitAlt} width="96" height="120" loading="lazy" decoding="async" /></div>
+    ) : (
+      <div class="lf-portrait" role="img" aria-label={h.portraitPlaceholderLabel}><span class="lf-mono" aria-hidden="true">{h.portraitPlaceholder}</span></div>
+    )}
+    <div class="lf-host-id">
+      <div class="lf-kick">{h.label}</div>
+      <h2 id="host-h" class="lf-hostname">{h.name}</h2>
+    </div>
+    <p class="lf-bio lf-host-bio">{h.bio}</p>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+import '../styles/lens.css';
+import { site } from '../content/site';
+const l = site.lens;
+const path =
+  'M2,80.5 C3.3,80.1 4.3,81.2 10,78 C15.7,74.8 27.3,68.2 36,61 C44.7,53.8 53.3,41.8 62,35 C70.7,28.2 82.2,22.8 88,20 C93.8,17.2 95.5,18.3 97,18';
+---
+<section id="lens" class="lf-sec lf-ivory lf-pre-arc" aria-labelledby="lens-h">
+  <span class="lf-arc" aria-hidden="true" data-in></span>
+  <div class="lf-lens">
+    <div>
+      <div class="lf-kick">{l.label}</div>
+      <h2 id="lens-h" class="lf-lens-h">{l.heading}<span class="lf-o">.</span></h2>
+      <p class="lf-bio lf-lens-p">{l.paragraph}</p>
+    </div>
+    <div class="lf-curve" data-in role="img" aria-label={l.alt}>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path class="lf-line" d={path}></path>
+      </svg>
+      {l.stages.map((_, i) => <span class={`lf-pt lf-p${i + 1}`} aria-hidden="true"></span>)}
+      {l.stages.map((s, i) => <span class={`lf-lab lf-p${i + 1}`} aria-hidden="true">{s.lines[0]}<br />{s.lines[1]}</span>)}
+    </div>
+  </div>
+</section>

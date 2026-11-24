@@ -1,0 +1,95 @@
+---
+import '../styles/newsletter.css';
+import { site } from '../content/site';
+const n = site.newsletter;
+---
+<section id="subscribe" class="lf-sec lf-ink lf-news" aria-labelledby="subscribe-h">
+  <span class="lf-arc" aria-hidden="true" data-in></span>
+  <div class="lf-kick">{n.label}</div>
+  <h2 id="subscribe-h" class="lf-h2">{n.heading}<span class="lf-o">.</span></h2>
+  <div class="lf-endgrid">
+    <p class="lf-news-p">{n.paragraph}</p>
+    <div
+      data-newsletter
+      data-sending={n.messages.sending}
+      data-success={n.messages.success}
+      data-invalid={n.messages.invalid}
+      data-error={n.messages.error}
+    >
+      <form class="lf-form" method="post" novalidate>
+        <label class="lf-sr" for="lf-email">{n.fieldLabel}</label>
+        <input class="lf-input" id="lf-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder={n.fieldLabel} />
+        <button class="lf-go" type="submit">{n.button}</button>
+      </form>
+      <p class="lf-done" role="status"></p>
+      <p class="lf-msg" id="lf-email-msg" aria-live="polite" hidden></p>
+      <p class="lf-note">{n.note.before}<a href={n.note.href}>{n.note.link}</a>{n.note.after}</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { subscribe } from '../scripts/newsletter.js';
+
+  const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  for (const box of document.querySelectorAll<HTMLElement>('[data-newsletter]')) {
+    const form = box.querySelector('form')!;
+    const input = form.querySelector('input')!;
+    const button = form.querySelector('button')!;
+    const done = box.querySelector<HTMLElement>('.lf-done')!;
+    const msg = box.querySelector<HTMLElement>('.lf-msg')!;
+    const note = box.querySelector<HTMLElement>('.lf-note')!;
+    const idle = button.textContent;
+    const text = box.dataset;
+
+    /* The message replaces the note in the same place; the form stays usable. */
+    const showMessage = (message: string, invalid: boolean) => {
+      msg.textContent = message;
+      msg.hidden = false;
+      note.hidden = true;
+      if (invalid) {
+        input.setAttribute('aria-invalid', 'true');
+        input.setAttribute('aria-describedby', msg.id);
+      }
+    };
+    const clearMessage = () => {
+      msg.hidden = true;
+      msg.textContent = '';
+      note.hidden = false;
+      input.removeAttribute('aria-invalid');
+      input.removeAttribute('aria-describedby');
+    };
+    const setSending = (on: boolean) => {
+      button.disabled = on;
+      input.readOnly = on;
+      button.textContent = on ? text.sending! : idle;
+    };
+
+    input.addEventListener('input', () => {
+      if (input.getAttribute('aria-invalid') === 'true') clearMessage();
+    });
+
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      if (button.disabled) return;
+      const email = input.value.trim();
+      if (!EMAIL.test(email)) {
+        showMessage(text.invalid!, true);
+        input.focus();
+        return;
+      }
+      clearMessage();
+      setSending(true);
+      try {
+        await subscribe(email);
+        /* Success replaces the form row; the note beneath stays. */
+        form.hidden = true;
+        done.textContent = text.success!;
+      } catch {
+        setSending(false);
+        showMessage(text.error!, false);
+      }
+    });
+  }
+</script>

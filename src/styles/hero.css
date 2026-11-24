@@ -1,0 +1,42 @@
+/* ---------- hero ---------- */
+.lf-stage{--u:min(1vw,1.7857vh,18px);--R0:38;--d:10.6;--ring:2.1;background:var(--ink)}
+.lf-stage.is-pin{height:calc(var(--u)*96)}
+.lf-stage.is-pin .lf-hero{position:sticky;top:0}
+.lf-hero{--R:var(--R0);--p:0;position:relative;overflow:hidden;height:calc(var(--u)*56);background:var(--ivory);color:var(--ink)}
+.lf-world{position:absolute;z-index:2;inset:0;padding:inherit;background:var(--ink);color:var(--ivory);-webkit-clip-path:circle(calc(var(--u)*var(--R)) at 0 100%);clip-path:circle(calc(var(--u)*var(--R)) at 0 100%);pointer-events:none}
+.lf-ripples{position:absolute;z-index:3;inset:0;opacity:calc(1 - var(--p)*8);pointer-events:none}
+.lf-ripple{position:absolute;left:0;bottom:0;width:calc(var(--u)*var(--R0)*2);height:calc(var(--u)*var(--R0)*2);margin:0 0 calc(var(--u)*var(--R0)*-1) calc(var(--u)*var(--R0)*-1);border:1.5px solid var(--ink);border-radius:50%;opacity:0;animation:lf-ripple 7s ease-out infinite}
+.lf-ripple+.lf-ripple{animation-delay:3.5s}
+@keyframes lf-ripple{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.28);opacity:0}}
+.lf-orbit{position:absolute;z-index:4;left:0;bottom:0;width:0;height:0;transform:rotate(-41deg);animation:lf-drift 18s ease-in-out infinite alternate}
+.lf-orbit.is-js{animation:none}
+@keyframes lf-drift{from{transform:rotate(-41deg)}to{transform:rotate(-49deg)}}
+.lf-dot{position:absolute;left:0;top:calc(var(--u)*var(--d)/-2);width:calc(var(--u)*var(--d));height:calc(var(--u)*var(--d));transform:translateX(calc(var(--u)*(var(--R) - var(--d)/2)))}
+.lf-dot i{display:block;width:100%;height:100%;border-radius:50%;background:var(--tangerine);box-shadow:0 0 0 calc(var(--u)*var(--ring)) var(--ivory)}
+.lf-side{position:absolute;z-index:1;left:calc(var(--u)*50);right:calc(var(--u)*4);top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:calc(var(--u)*2)}
+.lf-h1{display:flex;flex-direction:column;align-items:flex-start;margin:0;font-size:calc(var(--u)*9);font-weight:700;line-height:.92;letter-spacing:-.045em;white-space:nowrap}
+.lf-ln{display:block;overflow:hidden;padding:.12em .08em .1em 0;margin:-.12em -.08em -.1em 0}
+.lf-w,.lf-stop{display:inline-block}
+.lf-tag{margin:0;max-width:calc(var(--u)*42);font-size:calc(var(--u)*2.3);font-weight:600;line-height:1.2;letter-spacing:-.02em;text-wrap:balance}
+
+/* effect 2: the title lands (on load, CSS only) */
+@media (prefers-reduced-motion:no-preference){
+.lf-w{animation:lf-rise .95s var(--ease) backwards}
+.lf-ln+.lf-ln .lf-w{animation-delay:.12s}
+.lf-stop{animation:lf-land .65s var(--spring) .8s backwards}
+.lf-tag{animation:lf-fade .8s ease-out .5s backwards}
+.lf-cta{animation:lf-fade .8s ease-out .65s backwards}
+.lf-dot i{animation:lf-pop .8s var(--spring) .3s backwards}
+}
+@keyframes lf-rise{from{transform:translateY(125%)}}
+@keyframes lf-land{from{opacity:0;transform:translateY(-1em)}}
+@keyframes lf-pop{from{transform:scale(0)}}
+
+@media (max-width:999px){
+.lf-stage{--u:min(1vw,5.6px);--R0:70;--d:19.6;--ring:3.9}
+.lf-hero{height:auto;padding:calc(var(--u)*14) calc(var(--u)*6) calc(var(--u)*84)}
+.lf-orbit{animation:none;transform:rotate(-45deg)}
+.lf-side{position:static;gap:18px}
+.lf-h1{font-size:calc(var(--u)*16)}
+.lf-tag{max-width:none;font-size:clamp(20px,calc(var(--u)*5.4),28px)}
+}

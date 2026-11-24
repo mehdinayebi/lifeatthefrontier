@@ -1,0 +1,25 @@
+{
+  "name": "Life at the Frontier",
+  "short_name": "LATF",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#1C3D7A",
+  "background_color": "#FFF8EC",
+  "display": "standalone"
+}

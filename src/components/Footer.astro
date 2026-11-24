@@ -1,0 +1,54 @@
+---
+import '../styles/footer.css';
+import { site } from '../content/site';
+
+interface Props {
+  /** '' on the home page, '/' elsewhere, so the Explore links reach the home page sections. */
+  home?: string;
+}
+const { home = '' } = Astro.props;
+const f = site.footer;
+const c = f.contact;
+const platforms = f.follow.platforms.filter((p) => p.url);
+const year = new Date().getFullYear();
+const partnerHref = c.email ? `mailto:${c.email}?subject=${encodeURIComponent(c.partnerSubject)}` : '';
+---
+<footer class="lf-foot lf-ink">
+  <div class="lf-fgrid">
+    <div class="lf-fcol lf-fcol-brand">
+      <a class="lf-logo" href="#top" aria-label={f.logoLabel}>
+        <span class="lf-sym" aria-hidden="true"><span class="lf-sym-w"></span><span class="lf-sym-d"></span></span>
+        <span class="lf-logo-t" aria-hidden="true">{site.name}</span>
+      </a>
+      <p class="lf-fline">{f.line}</p>
+    </div>
+    <nav class="lf-fcol" aria-label={f.explore.label}>
+      <div class="lf-mono lf-flabel">{f.explore.label}</div>
+      {f.explore.links.map((l) => <a href={`${home}#${l.id}`}>{l.label}</a>)}
+    </nav>
+    <div class="lf-fcol">
+      <div class="lf-mono lf-flabel">{c.label}</div>
+      {c.email ? <a href={`mailto:${c.email}`}>{c.email}</a> : <span class="lf-ftext">{c.emailPlaceholder}</span>}
+      {partnerHref ? <a href={partnerHref}>{c.partner}</a> : <span class="lf-ftext">{c.partner}</span>}
+    </div>
+    {platforms.length > 0 && (
+      <div class="lf-fcol">
+        <div class="lf-mono lf-flabel lf-flabel-soc">{f.follow.label}</div>
+        <div class="lf-soc">
+          {platforms.map((p) => (
+            <a href={p.url} target="_blank" rel="noopener">
+              {p.name}
+              <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+  <div class="lf-legal">
+    <span>© {year} {site.name}. Published by {f.publisher.company}, {f.publisher.city}.</span>
+    <span class="lf-legal-links">
+      {f.legal.map((l) => <a href={l.href}>{l.label}</a>)}
+    </span>
+  </div>
+</footer>

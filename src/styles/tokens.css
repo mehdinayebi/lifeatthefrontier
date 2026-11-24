@@ -1,0 +1,15 @@
+/* Fonts: self-hosted, Latin subset, SIL Open Font Licence (see /fonts/LICENSE-*.txt). */
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/instrument-sans-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/instrument-sans-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/instrument-sans-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/instrument-sans-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/jetbrains-mono-latin-500-normal.woff2) format('woff2')}
+
+/* ---------- tokens ("Daybreak" palette) ---------- */
+.lf{
+--ivory:#FFF8EC;--ink:#1C3D7A;--tangerine:#F26A1B;--ink-soft:#3A4D76;
+--pad:clamp(20px,4vw,64px);--sp:clamp(72px,9vw,136px);--arc:clamp(36px,7vw,112px);
+--ease:cubic-bezier(.2,.7,.2,1);--spring:cubic-bezier(.3,1.5,.5,1);
+font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;
+background:var(--ivory);color:var(--ink)
+}

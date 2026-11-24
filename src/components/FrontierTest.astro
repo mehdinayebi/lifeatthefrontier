@@ -1,0 +1,20 @@
+---
+import '../styles/frontier-test.css';
+import { site } from '../content/site';
+const t = site.test;
+---
+<section id="test" class="lf-sec lf-ink lf-pre-arc" aria-labelledby="test-h">
+  <span class="lf-arc" aria-hidden="true" data-in></span>
+  <div class="lf-kick">{t.label}</div>
+  <h2 id="test-h" class="lf-h2">{t.heading}<span class="lf-o">.</span></h2>
+  <p class="lf-bio lf-lead">{t.lead}</p>
+  <div class="lf-qs" data-in>
+    {t.questions.map((q, i) => (
+      <div class="lf-q">
+        <span class="lf-num" aria-hidden="true">{i + 1}</span>
+        <h3>{q.question}</h3>
+        <p>{q.description}</p>
+      </div>
+    ))}
+  </div>
+</section>

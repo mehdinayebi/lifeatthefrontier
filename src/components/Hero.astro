@@ -1,0 +1,15 @@
+---
+import '../styles/hero.css';
+import { site } from '../content/site';
+import HeroText from './HeroText.astro';
+---
+<div class="lf-stage">
+  <section class="lf-hero" aria-label={site.hero.label}>
+    <HeroText />
+    <div class="lf-world" aria-hidden="true" inert>
+      <HeroText copy />
+    </div>
+    <div class="lf-ripples" aria-hidden="true"><div class="lf-ripple"></div><div class="lf-ripple"></div></div>
+    <div class="lf-orbit" aria-hidden="true"><div class="lf-dot"><i></i></div></div>
+  </section>
+</div>

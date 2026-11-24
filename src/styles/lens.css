@@ -1,0 +1,27 @@
+/* ---------- lens ---------- */
+.lf-lens{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:48px 64px;align-items:center}
+.lf-lens-h{margin:20px 0 0;font-size:clamp(34px,4.6vw,64px);font-weight:700;line-height:1;letter-spacing:-.04em;text-wrap:balance}
+.lf-bio.lf-lens-p{margin-top:24px;max-width:520px}
+.lf-curve{position:relative;width:100%;max-width:640px;aspect-ratio:16/11;justify-self:end}
+.lf-curve svg{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible}
+.lf-line{fill:none;stroke:var(--tangerine);stroke-width:5px;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.lf-pt{position:absolute;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:var(--tangerine);box-shadow:0 0 0 5px var(--ivory)}
+.lf-lab{position:absolute;font-size:clamp(14px,1.3vw,18px);font-weight:600;line-height:1.2;letter-spacing:-.01em;white-space:nowrap}
+.lf-p1{--t:.1}.lf-p2{--t:.36}.lf-p3{--t:.62}.lf-p4{--t:.88}
+/* positions on the curve (design spec 3.3) */
+.lf-pt.lf-p1{left:10%;top:78%}
+.lf-pt.lf-p2{left:36%;top:61%}
+.lf-pt.lf-p3{left:62%;top:35%}
+.lf-pt.lf-p4{left:88%;top:20%}
+.lf-lab.lf-p1{left:4%;top:calc(78% + 22px)}
+.lf-lab.lf-p2{left:calc(36% - 4px);top:calc(61% + 22px)}
+.lf-lab.lf-p3{left:calc(62% - 4px);top:calc(35% + 22px)}
+.lf-lab.lf-p4{right:calc(12% - 34px);bottom:calc(80% + 22px);text-align:right}
+
+/* effect 5: the lens draws itself */
+.lf-curve.lf-pre svg{-webkit-clip-path:inset(-24px 100% -24px -24px);clip-path:inset(-24px 100% -24px -24px)}
+.lf-curve.lf-pre .lf-pt,.lf-curve.lf-pre .lf-lab{opacity:0}
+.lf-curve.lf-in svg{animation:lf-wipe 1.7s linear backwards}
+.lf-curve.lf-in .lf-pt{animation:lf-pt .6s var(--spring) backwards;animation-delay:calc(var(--t)*1.7s)}
+.lf-curve.lf-in .lf-lab{animation:lf-fade .7s ease-out backwards;animation-delay:calc(var(--t)*1.7s + .12s)}
+@keyframes lf-wipe{from{clip-path:inset(-24px 100% -24px -24px)}to{clip-path:inset(-24px -24px -24px -24px)}}

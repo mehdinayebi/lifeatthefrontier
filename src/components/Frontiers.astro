@@ -1,0 +1,19 @@
+---
+import '../styles/frontiers.css';
+import { site } from '../content/site';
+const f = site.frontiers;
+---
+<section id="frontiers" class="lf-sec lf-ink lf-pre-arc" aria-labelledby="frontiers-h">
+  <div class="lf-kick">{f.label}</div>
+  <h2 id="frontiers-h" class="lf-h2">{f.heading}<span class="lf-o">.</span></h2>
+  <p class="lf-bio lf-lead">{f.lead}</p>
+  <ol class="lf-list" data-in>
+    {f.items.map((item, i) => (
+      <li class="lf-row">
+        <span class="lf-idx" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+        <span class="lf-name">{item.name}</span>
+        <span class="lf-scope">{item.scope}</span>
+      </li>
+    ))}
+  </ol>
+</section>

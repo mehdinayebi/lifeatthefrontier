@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/page.css';
+import Footer from '../components/Footer.astro';
+import { site } from '../content/site';
+const [first, second] = site.hero.titleLines;
+---
+<Base title={`${site.notFound.line} ${site.name}`} noindex>
+  <main id="content" class="lf-page lf-ivory">
+    <h1 class="lf-page-h1">{first} {second}<span class="lf-o">.</span></h1>
+    <p class="lf-bio lf-page-p">{site.notFound.line}</p>
+    <a class="lf-cta" href="/">{site.notFound.link}</a>
+  </main>
+  <Footer home="/" />
+</Base>

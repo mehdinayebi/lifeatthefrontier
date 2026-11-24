@@ -1,0 +1,8 @@
+/* ---------- legal stubs and 404: same type and tokens as the home page ---------- */
+.lf-page{padding:calc(var(--sp)*.5) var(--pad) calc(var(--sp) + var(--arc)*.5);min-height:60vh}
+.lf-page-home{display:inline-flex;align-items:flex-end;gap:10px;min-height:44px}
+.lf-page-home .lf-sym-w{background:var(--ink)}
+.lf-page-home .lf-sym-d{box-shadow:0 0 0 1.5px var(--ivory)}
+.lf-page-h1{margin:clamp(48px,7vw,112px) 0 0;font-size:clamp(40px,6.4vw,92px);font-weight:700;line-height:.96;letter-spacing:-.04em;text-wrap:balance}
+.lf-bio.lf-page-p{margin-top:24px;max-width:640px}
+.lf-page .lf-cta{margin-top:40px}

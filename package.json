@@ -1,0 +1,17 @@
+{
+  "name": "latf-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Life at the Frontier: launch website",
+  "engines": { "node": ">=22.23.4" },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:copy": "node scripts/check-copy.mjs"
+  },
+  "dependencies": {
+    "astro": "7.4.13"
+  }
+}

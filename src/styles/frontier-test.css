@@ -1,0 +1,10 @@
+/* ---------- frontier test ---------- */
+.lf-qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:40px;margin-top:clamp(40px,5vw,72px)}
+.lf-q{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding-top:20px;border-top:2px solid rgba(255,248,236,.5)}
+.lf-q h3{margin:4px 0 0;font-size:clamp(24px,2.4vw,34px);font-weight:700;line-height:1.05;letter-spacing:-.03em;text-wrap:balance}
+.lf-q p{margin:0;font-size:clamp(17px,1.35vw,20px);line-height:1.45;color:rgba(255,248,236,.9)}
+.lf-num{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--tangerine);color:var(--ink);font-size:19px;font-weight:700;line-height:1}
+.lf-q:nth-child(2){--i:1}.lf-q:nth-child(3){--i:2}.lf-q:nth-child(4){--i:3}
+.lf-qs.lf-pre .lf-q{opacity:0}
+.lf-qs.lf-in .lf-q{animation:lf-up .8s var(--ease) backwards;animation-delay:calc(var(--i,0)*120ms)}
+.lf-qs.lf-in .lf-num{animation:lf-pt .6s var(--spring) backwards;animation-delay:calc(var(--i,0)*120ms + 250ms)}

@@ -1,0 +1,21 @@
+/* ---------- footer ---------- */
+.lf-foot{display:flow-root;padding:0 var(--pad) var(--sp)}
+.lf-fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:40px 48px;margin-top:clamp(64px,8vw,112px);padding-top:40px;border-top:1px solid rgba(255,248,236,.24)}
+.lf-fcol{display:flex;flex-direction:column;font-size:16px}
+.lf-fcol-brand{gap:16px}
+.lf-fcol>a:not(.lf-logo),.lf-fcol>.lf-ftext,.lf-legal a{display:inline-flex;align-items:center;min-height:44px}
+.lf-flabel{margin-bottom:8px;color:rgba(255,248,236,.8)}
+.lf-flabel-soc{margin-bottom:16px}
+.lf-fline{margin:0;max-width:340px;line-height:1.5;color:rgba(255,248,236,.8)}
+.lf-logo{position:relative;display:flex;align-items:flex-end;gap:10px}
+/* 44 px tap area without changing the drawn layout */
+.lf-logo::after{content:"";position:absolute;left:0;right:0;top:-8px;bottom:-8px}
+.lf-sym{position:relative;display:block;width:28px;height:28px;flex:none}
+.lf-sym-w{position:absolute;left:0;top:0;width:28px;height:28px;background:var(--ivory);border-radius:0 100% 0 0}
+.lf-sym-d{position:absolute;left:15.8px;top:4.2px;width:8px;height:8px;border-radius:50%;background:var(--tangerine);box-shadow:0 0 0 1.5px var(--ink)}
+.lf-logo-t{margin-bottom:-3px;font-size:19px;font-weight:700;line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.lf-soc{display:flex;flex-wrap:wrap;gap:10px}
+.lf-soc a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1.5px solid rgba(255,248,236,.5);border-radius:999px;font-size:15px;font-weight:600}
+.lf-soc a:hover{background:var(--ivory);border-color:var(--ivory);color:var(--ink);text-decoration:none}
+.lf-legal{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 32px;margin-top:48px;padding-top:20px;border-top:1px solid rgba(255,248,236,.24);font-size:14px;color:rgba(255,248,236,.8)}
+.lf-legal-links{display:flex;flex-wrap:wrap;gap:0 24px}

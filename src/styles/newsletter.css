@@ -1,0 +1,22 @@
+/* ---------- newsletter ---------- */
+.lf-sec.lf-news{padding-bottom:0}
+.lf-endgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:40px 64px;align-items:start;margin-top:clamp(32px,4vw,56px)}
+.lf-news-p{margin:0;font-size:clamp(17px,1.4vw,21px);font-weight:500;line-height:1.45}
+.lf-form{display:flex;align-items:center;gap:10px}
+.lf-input{flex:1 1 auto;min-width:0;height:56px;padding:0 22px;border:1.5px solid currentColor;border-radius:999px;background:transparent;color:inherit;font:inherit;font-size:17px}
+.lf-input::placeholder{color:currentColor;opacity:.78}
+.lf-input[aria-invalid="true"]{border-color:var(--tangerine)}
+.lf-go{flex:none;height:56px;padding:0 26px;border:0;border-radius:999px;background:var(--tangerine);color:var(--ink);font:inherit;font-size:19px;font-weight:700;cursor:pointer;transition:transform .18s ease}
+.lf-go:hover{transform:translateY(-2px)}
+.lf-go:disabled{cursor:progress;transform:none}
+.lf-note,.lf-msg{margin:14px 0 0;font-size:14px;line-height:1.45;color:rgba(255,248,236,.8)}
+.lf-msg{color:var(--ivory)}
+.lf-note a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.lf-done{margin:0;min-height:56px;display:flex;align-items:center;font-size:19px;font-weight:600;line-height:1.3}
+.lf-done:empty{display:none}
+.lf [hidden]{display:none}
+
+@media (max-width:999px){
+.lf-input{padding:0 18px}
+.lf-go{padding:0 20px}
+}

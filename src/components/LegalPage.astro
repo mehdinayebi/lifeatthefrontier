@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/page.css';
+import Footer from './Footer.astro';
+import { site } from '../content/site';
+
+interface Props {
+  heading: string;
+  path: string;
+}
+const { heading, path } = Astro.props;
+---
+<Base title={`${heading}: ${site.name}`} path={path} noindex>
+  <main id="content" class="lf-page lf-ivory">
+    <a class="lf-page-home" href="/">
+      <span class="lf-sym" aria-hidden="true"><span class="lf-sym-w"></span><span class="lf-sym-d"></span></span>
+      <span class="lf-logo-t">{site.name}</span>
+    </a>
+    <h1 class="lf-page-h1">{heading}<span class="lf-o">.</span></h1>
+    <p class="lf-bio lf-page-p">{site.legalPlaceholder}</p>
+  </main>
+  <Footer home="/" />
+</Base>
