@@ -1,13 +1,18 @@
 ---
 import '../styles/hero.css';
 import { site } from '../content/site';
-import HeroText from './HeroText.astro';
+const [first, second] = site.hero.titleLines;
 ---
 <div class="lf-stage">
   <section class="lf-hero" aria-label={site.hero.label}>
-    <HeroText />
-    <div class="lf-world" aria-hidden="true" inert>
-      <HeroText copy />
+    <!-- The sky: ivory ground and text in one layer. The world is a hole cut in it
+         (a CSS mask), so the text is swallowed at the world's edge. -->
+    <div class="lf-sky">
+      <div class="lf-side">
+        <h1 class="lf-h1"><span class="lf-ln"><span class="lf-w">{first}</span></span> <span class="lf-ln"><span class="lf-w">{second}<span class="lf-o lf-stop">.</span></span></span></h1>
+        <p class="lf-tag">{site.hero.line}</p>
+        <a class="lf-cta" href="#subscribe">{site.hero.button}</a>
+      </div>
     </div>
     <div class="lf-ripples" aria-hidden="true"><div class="lf-ripple"></div><div class="lf-ripple"></div></div>
     <div class="lf-orbit" aria-hidden="true"><div class="lf-dot"><i></i></div></div>

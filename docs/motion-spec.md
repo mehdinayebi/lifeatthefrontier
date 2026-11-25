@@ -29,6 +29,8 @@ Arrival targets, marked with `data-in` in the reference: the frontier list, the 
 
 ## Effect 1. Crossing the frontier
 
+> **Superseded (25 Nov 2026)** by `docs/change-hero-crossing.md`: the hero text is now swallowed by the world and the next section is revealed inside it. Where the two differ, the change request wins.
+
 **What the visitor sees.** As they scroll out of the hero, the blue world grows from its corner until it fills the screen. The title changes from ink to ivory exactly where the edge passes over it. The dot rides the edge and leaves the frame. The hero ends fully blue and flows into the blue "What we cover" section. Scrolling back up reverses it.
 
 **Structure.** See the design spec, section 3.1: a stage, and inside it a hero with a base layer and a clipped world layer holding the same text.

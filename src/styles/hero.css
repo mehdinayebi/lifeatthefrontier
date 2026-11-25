@@ -1,9 +1,26 @@
 /* ---------- hero ---------- */
-.lf-stage{--u:min(1vw,1.7857vh,18px);--R0:38;--d:10.6;--ring:2.1;background:var(--ink)}
-.lf-stage.is-pin{height:calc(var(--u)*96)}
-.lf-stage.is-pin .lf-hero{position:sticky;top:0}
-.lf-hero{--R:var(--R0);--p:0;position:relative;overflow:hidden;height:calc(var(--u)*56);background:var(--ivory);color:var(--ink)}
-.lf-world{position:absolute;z-index:2;inset:0;padding:inherit;background:var(--ink);color:var(--ivory);-webkit-clip-path:circle(calc(var(--u)*var(--R)) at 0 100%);clip-path:circle(calc(var(--u)*var(--R)) at 0 100%);pointer-events:none}
+/* The hero unit lives on the page root: the section after the hero uses it too. */
+.lf{--u:min(1vw,1.7857vh,24px);--R0:38;--d:10.6;--ring:2.1}
+
+/* Stage: NOT positioned, no z-index, no transform. It must not create a stacking
+   context, or its ink ground would paint over the next section. */
+.lf-stage{background:var(--ink)}
+.lf-stage.is-pin{height:200vh}
+.lf-stage.is-pin .lf-hero{position:sticky;top:0;z-index:5;height:100vh}
+/* the next section sits under the pinned hero and is revealed through the world */
+.lf-stage.is-pin+.lf-sec{margin-top:-100vh}
+
+.lf-hero{--R:var(--R0);--p:0;position:relative;overflow:hidden;height:calc(var(--u)*56);color:var(--ink)}
+.lf-hero.is-gone,.lf-hero.is-gone *{pointer-events:none}
+
+/* The sky: ivory ground and text, with the world cut out of it as a circular hole. */
+.lf-sky{position:absolute;inset:0;background:var(--ivory);
+-webkit-mask-image:radial-gradient(circle at 0 100%,transparent calc(var(--u)*var(--R) - .5px),#000 calc(var(--u)*var(--R) + .5px));
+mask-image:radial-gradient(circle at 0 100%,transparent calc(var(--u)*var(--R) - .5px),#000 calc(var(--u)*var(--R) + .5px))}
+/* browsers without CSS masks: a static world, no scroll effect */
+@supports not ((mask-image:none) or (-webkit-mask-image:none)){
+.lf-sky{background:radial-gradient(circle at 0 100%,var(--ink) calc(var(--u)*var(--R0) - .5px),rgba(28,61,122,0) calc(var(--u)*var(--R0) + .5px)) var(--ivory)}
+}
 .lf-ripples{position:absolute;z-index:3;inset:0;opacity:calc(1 - var(--p)*8);pointer-events:none}
 .lf-ripple{position:absolute;left:0;bottom:0;width:calc(var(--u)*var(--R0)*2);height:calc(var(--u)*var(--R0)*2);margin:0 0 calc(var(--u)*var(--R0)*-1) calc(var(--u)*var(--R0)*-1);border:1.5px solid var(--ink);border-radius:50%;opacity:0;animation:lf-ripple 7s ease-out infinite}
 .lf-ripple+.lf-ripple{animation-delay:3.5s}
@@ -33,8 +50,9 @@
 @keyframes lf-pop{from{transform:scale(0)}}
 
 @media (max-width:999px){
-.lf-stage{--u:min(1vw,5.6px);--R0:70;--d:19.6;--ring:3.9}
-.lf-hero{height:auto;padding:calc(var(--u)*14) calc(var(--u)*6) calc(var(--u)*84)}
+.lf{--u:min(1vw,5.6px);--R0:70;--d:19.6;--ring:3.9}
+.lf-hero{height:auto}
+.lf-sky{position:relative;padding:calc(var(--u)*14) calc(var(--u)*6) calc(var(--u)*84)}
 .lf-orbit{animation:none;transform:rotate(-45deg)}
 .lf-side{position:static;gap:18px}
 .lf-h1{font-size:calc(var(--u)*16)}

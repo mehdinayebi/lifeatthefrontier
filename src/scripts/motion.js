@@ -10,6 +10,10 @@ function latfMotion(root) {
   var mq = win.matchMedia ? win.matchMedia('(prefers-reduced-motion: reduce)') : null;
   if (!root || (mq && mq.matches) || !('IntersectionObserver' in win)) return noop;
 
+  /* the crossing needs CSS masks; without them the hero stays static */
+  var canMask = !win.CSS || !win.CSS.supports ||
+    win.CSS.supports('mask-image', 'none') || win.CSS.supports('-webkit-mask-image', 'none');
+
   var stage = root.querySelector('.lf-stage');
   var hero = root.querySelector('.lf-hero');
   var orbit = root.querySelector('.lf-orbit');
@@ -59,19 +63,21 @@ function latfMotion(root) {
     var cs = win.getComputedStyle(hero);
     s.R0 = parseFloat(cs.getPropertyValue('--R0')) || 38;
     s.d = parseFloat(cs.getPropertyValue('--d')) || 10.6;
-    s.W = hero.offsetWidth;
-    s.H = hero.offsetHeight;
     s.u = (dot.offsetWidth / s.d) || 14;
     s.wide = win.innerWidth >= 1000;
-    /* pin the hero only in a normal desktop viewport on a page that scrolls */
+    /* pin the hero only when its designed height (56 units) roughly fills a desktop
+       window, on a page that scrolls. While pinned the hero is exactly one window tall. */
+    var designed = s.u * 56;
     var scrolls = document.documentElement.scrollHeight > win.innerHeight * 1.5;
-    var pin = s.wide && scrolls && win.innerHeight >= 520 && win.innerHeight <= s.H * 1.7;
+    var pin = canMask && s.wide && scrolls && win.innerHeight >= 480 && win.innerHeight <= designed * 1.2;
     if (pin !== s.pinned) {
       s.pinned = pin;
       stage.classList.toggle('is-pin', pin);
     }
+    s.W = hero.offsetWidth;
+    s.H = hero.offsetHeight;
     s.Rmax = Math.sqrt(s.W * s.W + s.H * s.H) / s.u + 1;
-    s.travel = pin ? Math.max(1, stage.offsetHeight - s.H) : Math.max(1, s.H * 0.6);
+    s.travel = pin ? Math.max(1, stage.offsetHeight - s.H) : Math.max(1, s.H * 0.85);
     s.p = -1;
   }
 
@@ -79,12 +85,14 @@ function latfMotion(root) {
     s.raf = 0;
     /* scroll progress, 0 at the top, 1 when the world has filled the hero */
     var top = stage.getBoundingClientRect().top;
-    var p = Math.min(1, Math.max(0, -top / s.travel));
+    var p = canMask ? Math.min(1, Math.max(0, -top / s.travel)) : 0;
     if (p !== s.p) {
       s.p = p;
       var e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
       hero.style.setProperty('--R', (s.R0 + (s.Rmax - s.R0) * e).toFixed(3));
       hero.style.setProperty('--p', p.toFixed(3));
+      /* once the world has taken the whole hero, let clicks through to what is underneath */
+      hero.classList.toggle('is-gone', p >= 0.999);
     }
     /* dot angle, in degrees above the bottom edge, measured from the world's centre */
     var target = 45;
@@ -139,6 +147,7 @@ function latfMotion(root) {
     win.removeEventListener('resize', measure);
     stage.classList.remove('is-pin');
     orbit.classList.remove('is-js');
+    hero.classList.remove('is-gone');
     orbit.style.removeProperty('transform');
     hero.style.removeProperty('--R');
     hero.style.removeProperty('--p');
