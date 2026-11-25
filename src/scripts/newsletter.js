@@ -9,7 +9,7 @@
  * The Kit form ID is public (it appears in every Kit embed code), so it lives here.
  * PUBLIC_NEWSLETTER_ENDPOINT, if set at build time, overrides it.
  */
-const KIT_FORM_ID = '';
+const KIT_FORM_ID = '10243326';
 
 const ENDPOINT =
   import.meta.env.PUBLIC_NEWSLETTER_ENDPOINT ||
