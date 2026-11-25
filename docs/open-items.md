@@ -11,7 +11,7 @@ Things the site needs that Mehdi has not supplied or confirmed. Build around the
 | 3 | Newsletter provider and its sign-up address or API key | Newsletter form | Form shows the error state. See `CLAUDE.md`, "Newsletter form" |
 | 4 | Addresses for each platform the show will really be on (YouTube, Spotify, Apple Podcasts, X, LinkedIn, Instagram) | Footer pills | Leave out any pill without a real address. Do not link to a platform home page |
 | 5 | Privacy policy, terms and editorial standards text | Three legal pages | Placeholder line on each page |
-| 6 | Portrait photograph of the host | Host section | The `[Photo]` block, 96×120 px with the top-right corner rounded |
+| 6 | ~~Portrait photograph of the host~~ Supplied | Host section | Now in `public/host/`, cropped to the 96×120 px frame |
 
 ## To confirm with Mehdi
 

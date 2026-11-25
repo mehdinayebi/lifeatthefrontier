@@ -120,7 +120,9 @@ export const site = {
     name: 'Mehdi Nayebi',
     bio: 'Mehdi worked on structured products at Deutsche Bank and Bank of America, and has founded or co-founded three companies. He brings both lenses to every story: what the evidence really shows, and what it takes to build.',
     /** Path under public/ once a portrait is supplied (open item 6). Empty shows the placeholder block. */
-    portrait: '',
+    portrait: '/host/mehdi-nayebi-192.jpg',
+    /** Sharper copy for high-density screens. */
+    portrait3x: '/host/mehdi-nayebi-288.jpg',
     portraitAlt: 'Portrait of Mehdi Nayebi',
     portraitPlaceholder: '[Photo]',
     portraitPlaceholderLabel: 'Portrait of Mehdi Nayebi, to be added',
