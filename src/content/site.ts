@@ -176,7 +176,7 @@ export const site = {
       label: 'Follow and listen',
       /** Open item 4: add each real address. A platform without one is left out. */
       platforms: [
-        { name: 'YouTube', url: '' },
+        { name: 'YouTube', url: 'https://www.youtube.com/@LifeattheFrontier' },
         { name: 'Spotify', url: '' },
         { name: 'Apple Podcasts', url: '' },
         { name: 'X', url: 'https://x.com/lifeatfrontier' },
