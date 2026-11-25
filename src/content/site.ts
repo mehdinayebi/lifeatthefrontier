@@ -46,6 +46,8 @@ export const site = {
     ogImageWidth: 1200,
     ogImageHeight: 630,
     themeColor: '#1C3D7A',
+    /** X account, for share cards. */
+    xHandle: '@lifeatfrontier',
   },
 
   skipLink: 'Skip to content',
@@ -177,9 +179,9 @@ export const site = {
         { name: 'YouTube', url: '' },
         { name: 'Spotify', url: '' },
         { name: 'Apple Podcasts', url: '' },
-        { name: 'X', url: '' },
+        { name: 'X', url: 'https://x.com/lifeatfrontier' },
         { name: 'LinkedIn', url: '' },
-        { name: 'Instagram', url: '' },
+        { name: 'Instagram', url: 'https://www.instagram.com/lifeatfrontier/' },
       ] as Platform[],
     },
     legal: [
