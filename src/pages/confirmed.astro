@@ -1,0 +1,20 @@
+---
+/* Where Kit sends new subscribers after they click the confirmation link in their email. */
+import Base from '../layouts/Base.astro';
+import '../styles/page.css';
+import Footer from '../components/Footer.astro';
+import { site } from '../content/site';
+const c = site.confirmed;
+---
+<Base title={`${c.heading}: ${site.name}`} noindex>
+  <main id="content" class="lf-page lf-ivory">
+    <a class="lf-page-home" href="/">
+      <span class="lf-sym" aria-hidden="true"><span class="lf-sym-w"></span><span class="lf-sym-d"></span></span>
+      <span class="lf-logo-t">{site.name}</span>
+    </a>
+    <h1 class="lf-page-h1">{c.heading}<span class="lf-o">.</span></h1>
+    <p class="lf-bio lf-page-p">{c.line}</p>
+    <a class="lf-cta" href="/">{c.link}</a>
+  </main>
+  <Footer home="/" />
+</Base>

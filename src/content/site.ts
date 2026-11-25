@@ -213,6 +213,13 @@ export const site = {
     logo: '/icon-512.png',
   },
 
+  /** Page Kit sends people to after they click the confirmation link. */
+  confirmed: {
+    heading: "You're confirmed",
+    line: 'The Frontier Brief will arrive in your inbox each time an episode or essay is published.',
+    link: 'Back to the home page',
+  },
+
   notFound: {
     line: 'This page is beyond the frontier.',
     link: 'Back to the home page',
