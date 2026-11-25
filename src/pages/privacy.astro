@@ -1,4 +1,128 @@
 ---
 import LegalPage from '../components/LegalPage.astro';
+const email = 'hello@lifeatthefrontier.com';
 ---
-<LegalPage heading="Privacy" path="/privacy" />
+<LegalPage
+  heading="Privacy"
+  path="/privacy"
+  updated="25 November 2026"
+  description="How Life at the Frontier handles your personal information. No cookies, no tracking, and your email address is used only to send the newsletter."
+>
+  <p class="lf-doc-lead">
+    Life at the Frontier is a podcast created and hosted by Mehdi Nayebi. This page explains what
+    personal information we collect through lifeatthefrontier.com, why, and what you can do about it.
+    The short version: we collect as little as we can, we never sell it, and this website uses no
+    cookies and no tracking.
+  </p>
+
+  <h2>Who is responsible for your information</h2>
+  <p>
+    Mehdi Nayebi, as the creator of Life at the Frontier, is responsible for the personal information
+    described here. You can reach us at <a href={`mailto:${email}`}>{email}</a> with any question or
+    request about your information.
+  </p>
+
+  <h2>What we collect and why</h2>
+  <ul>
+    <li>
+      <strong>Your email address, if you subscribe to the newsletter.</strong> We use it only to send
+      you The Frontier Brief and messages about your subscription. We ask you to confirm your address
+      before we send anything. Our legal basis is your consent, which you can withdraw at any time.
+    </li>
+    <li>
+      <strong>What you send us, if you email us.</strong> We use it to reply to you and to deal with
+      your request. Our legal basis is our legitimate interest in answering the people who contact us.
+    </li>
+    <li>
+      <strong>Basic technical data when you visit.</strong> Like every website, our hosting provider
+      receives your IP address, browser type and the pages requested, so that it can deliver the site
+      and protect it from abuse. We do not use this data to identify or profile you. Our legal basis is
+      our legitimate interest in running a secure website.
+    </li>
+  </ul>
+  <p>
+    We do not collect any other information through this website. We do not ask for your name, and we
+    do not collect sensitive information.
+  </p>
+
+  <h2>Cookies and tracking</h2>
+  <p>
+    This website sets no cookies. It uses no analytics, no advertising tags, no social media pixels and
+    no third-party fonts or scripts. That is why you do not see a cookie banner. If we ever add privacy
+    friendly analytics, we will update this page first.
+  </p>
+
+  <h2>Who we share it with</h2>
+  <p>
+    We never sell, rent or trade your personal information, and we do not share it for advertising. We
+    share it only with the service providers that help us run the site and the newsletter, and only
+    as far as they need it:
+  </p>
+  <ul>
+    <li><strong>Vercel</strong>, which hosts this website.</li>
+    <li>
+      <strong>Our email newsletter provider</strong>, which stores subscriber addresses and sends the
+      newsletter on our behalf.
+    </li>
+    <li><strong>Our email provider</strong>, which handles messages sent to our contact address.</li>
+  </ul>
+  <p>
+    These providers may only use your information to provide their service to us. We may also disclose
+    information if the law requires it.
+  </p>
+
+  <h2>International transfers</h2>
+  <p>
+    Some of our providers process data in the United States and other countries. Where information
+    about people in the UK or European Economic Area is transferred, we rely on the safeguards the law
+    recognises, such as standard contractual clauses.
+  </p>
+
+  <h2>How long we keep it</h2>
+  <ul>
+    <li>Newsletter: until you unsubscribe, after which your address is removed from our mailing list.</li>
+    <li>Emails: for as long as we need them to deal with your message, and then deleted.</li>
+    <li>Technical data: kept by our hosting provider for a short period under its own policy.</li>
+  </ul>
+
+  <h2>Your rights</h2>
+  <p>
+    Depending on where you live, you have the right to ask for a copy of your information, to have it
+    corrected or deleted, to object to or restrict how we use it, to receive it in a portable format, and
+    to withdraw your consent at any time. You can unsubscribe from the newsletter with the link in every
+    email. To make any other request, write to <a href={`mailto:${email}`}>{email}</a>. We will
+    reply within one month.
+  </p>
+  <p>
+    If you are in California: we do not sell or share personal information as those terms are defined
+    in California law, and we will not treat you differently for using your privacy rights.
+  </p>
+  <p>
+    If you are not happy with how we have handled your information, you can complain to your local data
+    protection authority. We would appreciate the chance to put it right first.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    This website and the newsletter are not directed at children under 16, and we do not knowingly
+    collect their information. If you believe a child has given us their details, please tell us and we
+    will delete them.
+  </p>
+
+  <h2>Security</h2>
+  <p>
+    The site is served only over an encrypted connection, and we limit who can access subscriber data.
+    No system is perfectly secure, but we take reasonable steps to protect your information.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If we change how we handle your information, we will update this page and the date at the top. If a
+    change is significant, we will tell newsletter subscribers by email before it takes effect.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions about privacy: <a href={`mailto:${email}`}>{email}</a>.
+  </p>
+</LegalPage>

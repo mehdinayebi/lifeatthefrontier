@@ -163,8 +163,8 @@ export const site = {
     },
     contact: {
       label: 'Contact',
-      /** Real address once supplied (open item 1). Empty shows the placeholder as plain text. */
-      email: '',
+      /** Contact address. Empty would show the placeholder below as plain text. */
+      email: 'hello@lifeatthefrontier.com',
       emailPlaceholder: '[hello@lifeatthefrontier.com]',
       partner: 'Partner with us',
       partnerSubject: 'Partnership',
@@ -181,18 +181,12 @@ export const site = {
         { name: 'Instagram', url: '' },
       ] as Platform[],
     },
-    publisher: {
-      company: '[Company name]',
-      city: '[City]',
-    },
     legal: [
       { label: 'Privacy', href: '/privacy' },
       { label: 'Terms', href: '/terms' },
       { label: 'Editorial standards', href: '/editorial-standards' },
     ],
   },
-
-  legalPlaceholder: '[Text to be supplied.]',
 
   notFound: {
     line: 'This page is beyond the frontier.',

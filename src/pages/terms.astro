@@ -1,4 +1,96 @@
 ---
 import LegalPage from '../components/LegalPage.astro';
+const email = 'hello@lifeatthefrontier.com';
 ---
-<LegalPage heading="Terms" path="/terms" />
+<LegalPage
+  heading="Terms"
+  path="/terms"
+  updated="25 November 2026"
+  description="The terms for using the Life at the Frontier website, podcast and newsletter, including why nothing we publish is financial, medical or legal advice."
+>
+  <p class="lf-doc-lead">
+    These terms apply to lifeatthefrontier.com and to the Life at the Frontier podcast and newsletter,
+    created and hosted by Mehdi Nayebi ("we", "us"). By using the site or our content, you agree to
+    them. If you do not agree, please do not use them.
+  </p>
+
+  <h2>Not advice</h2>
+  <p>
+    Life at the Frontier explores science, technology and the businesses built on them. Everything we
+    publish is for information and discussion only. It is not financial, investment, legal, medical
+    or any other professional advice, and it is not a recommendation to buy or sell any security or to
+    make any decision.
+  </p>
+  <p>
+    Frontier technologies are uncertain by nature. Forecasts can be wrong, companies can fail, and
+    investments can lose value. Do your own research and speak to a qualified professional before you
+    act on anything you hear or read here.
+  </p>
+
+  <h2>Guests and their views</h2>
+  <p>
+    Guests speak for themselves. Their views are not necessarily ours, and appearing on the show is not
+    an endorsement of a guest, their company or their products. Guests or the host may have interests
+    in the subjects discussed. We disclose relevant interests as set out in our
+    <a href="/editorial-standards">editorial standards</a>.
+  </p>
+
+  <h2>Accuracy</h2>
+  <p>
+    We work hard to get things right, but we cannot promise that everything we publish is complete,
+    accurate or up to date, and fields at the frontier move quickly. When we find a mistake we correct
+    it. If you spot one, please tell us at <a href={`mailto:${email}`}>{email}</a>.
+  </p>
+
+  <h2>Our content</h2>
+  <p>
+    The Life at the Frontier name, logo, website, podcast episodes, newsletter and other materials
+    belong to us or to the people who licensed them to us. You are welcome to listen, read, and share
+    links to our content, and to quote short extracts with credit to Life at the Frontier and a link back.
+  </p>
+  <p>
+    Please do not copy, republish, sell or adapt our content, or use our name or logo, without written
+    permission. You may not use our content to train artificial intelligence models, or to create
+    synthetic versions of the host's or guests' voices or likenesses.
+  </p>
+
+  <h2>The newsletter</h2>
+  <p>
+    The newsletter is free. You can unsubscribe at any time with the link in every email. We may change
+    or stop the newsletter at any time. How we handle your email address is explained in our
+    <a href="/privacy">privacy policy</a>.
+  </p>
+
+  <h2>Links to other services</h2>
+  <p>
+    Our site and content link to other websites and to the platforms where the podcast is available.
+    We do not control them and are not responsible for their content or practices. Their own terms and
+    privacy policies apply.
+  </p>
+
+  <h2>Using the site</h2>
+  <p>
+    Please do not misuse the site: do not try to break or overload it, gain unauthorised access to it,
+    or use it for anything unlawful. We may change, suspend or withdraw the site or any content at any
+    time.
+  </p>
+
+  <h2>Liability</h2>
+  <p>
+    The site and our content are provided "as is", without warranties of any kind. To the fullest extent
+    the law allows, we are not liable for any loss or damage arising from your use of, or reliance on,
+    the site or our content. Nothing in these terms limits any liability that cannot be limited by law,
+    or takes away your rights as a consumer.
+  </p>
+
+  <h2>Changes to these terms</h2>
+  <p>
+    We may update these terms from time to time. The date at the top shows when they last changed. If
+    you keep using the site after a change, the updated terms apply.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions about these terms: <a href={`mailto:${email}`}>{email}</a>.
+  </p>
+</LegalPage>

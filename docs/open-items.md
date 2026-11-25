@@ -6,11 +6,11 @@ Things the site needs that Mehdi has not supplied or confirmed. Build around the
 
 | # | Item | Where it appears | Until then |
 |---|---|---|---|
-| 1 | Contact email address | Footer, "Partner with us" link | Show `[hello@lifeatthefrontier.com]` as plain text, not a link |
-| 2 | Publishing company name and city | Footer legal line | Show `[Company name]`, `[City]` |
+| 1 | ~~Contact email address~~ Supplied: hello@lifeatthefrontier.com | Footer, "Partner with us" link, legal pages | Live. The domain still needs an inbox or forwarding to receive mail |
+| 2 | ~~Publishing company name and city~~ Not needed (owner's decision) | Footer legal line | Line now reads "© year Life at the Frontier." |
 | 3 | Newsletter provider and its sign-up address or API key | Newsletter form | Form shows the error state. See `CLAUDE.md`, "Newsletter form" |
 | 4 | Addresses for each platform the show will really be on (YouTube, Spotify, Apple Podcasts, X, LinkedIn, Instagram) | Footer pills | Leave out any pill without a real address. Do not link to a platform home page |
-| 5 | Privacy policy, terms and editorial standards text | Three legal pages | Placeholder line on each page |
+| 5 | ~~Privacy policy, terms and editorial standards text~~ Drafted 25 Nov 2026 | Three legal pages | Name the newsletter provider in the privacy policy once chosen. A lawyer's review is recommended |
 | 6 | ~~Portrait photograph of the host~~ Supplied | Host section | Now in `public/host/`, cropped to the 96×120 px frame |
 
 ## To confirm with Mehdi

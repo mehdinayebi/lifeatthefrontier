@@ -103,7 +103,7 @@ Headings end with a full stop coloured tangerine. That full stop is part of the 
 
 - "Partner with us" opens an email to the contact address with the subject "Partnership".
 - Each "Follow and listen" item is a text pill with a small arrow and opens in a new tab. The addresses are open items.
-- **Legal line**: © 2026 Life at the Frontier. Published by `[Company name]`, `[City]`.
+- **Legal line**: © 2026 Life at the Frontier.
   - Generate the year at build time.
 - **Legal links**: Privacy · Terms · Editorial standards
 

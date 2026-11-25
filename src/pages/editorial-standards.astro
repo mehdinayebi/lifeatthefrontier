@@ -1,4 +1,87 @@
 ---
 import LegalPage from '../components/LegalPage.astro';
+const email = 'hello@lifeatthefrontier.com';
 ---
-<LegalPage heading="Editorial standards" path="/editorial-standards" />
+<LegalPage
+  heading="Editorial standards"
+  path="/editorial-standards"
+  updated="25 November 2026"
+  description="How Life at the Frontier works: independence, evidence, disclosure of interests, how we treat guests and how we correct mistakes."
+>
+  <p class="lf-doc-lead">
+    Life at the Frontier is an independent podcast about the breakthroughs transforming our world, and
+    the people behind them. Our listeners trust us to separate what is real from what is promised.
+    These are the standards we hold ourselves to.
+  </p>
+
+  <h2>Evidence first</h2>
+  <p>
+    Every episode is built around the Frontier Test: what's possible, what actually works, what will
+    change, and what it means for you. The second question matters most to us. We look for evidence,
+    not announcements, and we make the difference clear:
+  </p>
+  <ul>
+    <li>We distinguish peer-reviewed research from preprints, company claims and forecasts.</li>
+    <li>We say how far along a breakthrough really is, from the lab to everyday life.</li>
+    <li>We state uncertainty plainly, and we do not present a guest's projection as fact.</li>
+    <li>We check key claims before publication and point to our main sources where we can.</li>
+  </ul>
+
+  <h2>Independence</h2>
+  <p>
+    Editorial decisions are ours alone. We choose our subjects, our guests and our questions.
+  </p>
+  <ul>
+    <li>Guests never pay to appear, and appearing is not an endorsement.</li>
+    <li>Guests do not approve questions in advance or the final edit.</li>
+    <li>
+      Any sponsorship or paid partnership is clearly labelled as such. Sponsors have no say over which
+      guests we invite, what we ask or what we publish.
+    </li>
+  </ul>
+
+  <h2>Disclosure of interests</h2>
+  <p>
+    Our host has worked in finance and has founded companies, and that experience shapes the questions
+    we ask. It also means we need to be open. If the host has a financial interest, a business
+    relationship or a personal connection that is relevant to an episode, a guest or a company we
+    discuss, we say so in the episode or its notes. We ask guests to tell us about relevant interests
+    too, and we disclose them where they matter to the listener.
+  </p>
+  <p>
+    Nothing we publish is investment advice. We do not trade on information gained through our work
+    before it is public.
+  </p>
+
+  <h2>How we treat guests</h2>
+  <ul>
+    <li>We tell guests what the conversation is about and how it will be published.</li>
+    <li>
+      We edit for length and clarity, never to change the meaning of what someone said or to take it out
+      of context.
+    </li>
+    <li>We challenge claims fairly and give guests the chance to respond.</li>
+    <li>Guests can ask us to fix a factual error in what they said before or after publication.</li>
+  </ul>
+
+  <h2>Artificial intelligence</h2>
+  <p>
+    We may use software tools, including AI, to help with research, transcription and production.
+    People make every editorial decision and check everything we publish. We never use AI to invent
+    quotes, or to generate or alter the voice or likeness of the host or a guest.
+  </p>
+
+  <h2>Corrections</h2>
+  <p>
+    When we get something wrong, we correct it promptly and openly. Corrections to the website and
+    newsletter are noted with the date, and significant errors in an episode are corrected in its notes
+    and, where it matters, in a later episode. To report an error, write to
+    <a href={`mailto:${email}`}>{email}</a>.
+  </p>
+
+  <h2>Feedback</h2>
+  <p>
+    We want to hear from you if you think we have fallen short of these standards. Write to
+    <a href={`mailto:${email}`}>{email}</a>. We read every message.
+  </p>
+</LegalPage>

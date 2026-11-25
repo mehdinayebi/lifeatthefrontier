@@ -7,17 +7,23 @@ import { site } from '../content/site';
 interface Props {
   heading: string;
   path: string;
+  description: string;
+  /** Shown as "Last updated ...". */
+  updated: string;
 }
-const { heading, path } = Astro.props;
+const { heading, path, description, updated } = Astro.props;
 ---
-<Base title={`${heading}: ${site.name}`} path={path} noindex>
+<Base title={`${heading}: ${site.name}`} description={description} path={path}>
   <main id="content" class="lf-page lf-ivory">
     <a class="lf-page-home" href="/">
       <span class="lf-sym" aria-hidden="true"><span class="lf-sym-w"></span><span class="lf-sym-d"></span></span>
       <span class="lf-logo-t">{site.name}</span>
     </a>
     <h1 class="lf-page-h1">{heading}<span class="lf-o">.</span></h1>
-    <p class="lf-bio lf-page-p">{site.legalPlaceholder}</p>
+    <article class="lf-doc">
+      <p class="lf-mono lf-doc-date">Last updated {updated}</p>
+      <slot />
+    </article>
   </main>
   <Footer home="/" />
 </Base>

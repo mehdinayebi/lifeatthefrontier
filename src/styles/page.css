@@ -6,3 +6,16 @@
 .lf-page-h1{margin:clamp(48px,7vw,112px) 0 0;font-size:clamp(40px,6.4vw,92px);font-weight:700;line-height:.96;letter-spacing:-.04em;text-wrap:balance}
 .lf-bio.lf-page-p{margin-top:24px;max-width:640px}
 .lf-page .lf-cta{margin-top:40px}
+
+/* ---------- legal documents ---------- */
+.lf-doc{max-width:720px;margin-top:32px}
+.lf-doc .lf-doc-date{margin:0;color:var(--ink)}
+.lf-doc h2{margin:56px 0 0;font-size:clamp(24px,2.4vw,34px);font-weight:700;line-height:1.05;letter-spacing:-.03em;text-wrap:balance}
+.lf-doc p,.lf-doc li{font-size:clamp(17px,1.5vw,21px);line-height:1.5;text-wrap:pretty}
+.lf-doc p{margin:16px 0 0}
+.lf-doc .lf-doc-lead{margin-top:32px}
+.lf-doc ul{margin:16px 0 0;padding-left:1.2em}
+.lf-doc li+li{margin-top:8px}
+.lf-doc li::marker{color:var(--tangerine)}
+.lf-doc a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.lf-doc strong{font-weight:600}
