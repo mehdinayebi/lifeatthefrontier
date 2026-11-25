@@ -1,2 +1,8 @@
+# Life at the Frontier
+# Search engines and AI assistants are welcome to read and cite this site.
+# A plain-text summary for AI assistants: https://www.lifeatthefrontier.com/llms.txt
+
 User-agent: *
 Allow: /
+
+Sitemap: https://www.lifeatthefrontier.com/sitemap.xml

@@ -29,7 +29,8 @@ export interface Platform {
 }
 
 export const site = {
-  url: 'https://lifeatthefrontier.com',
+  /** Canonical address. Vercel redirects the bare domain here, so every URL we publish uses www. */
+  url: 'https://www.lifeatthefrontier.com',
   name: 'Life at the Frontier',
   shortName: 'LATF',
   lang: 'en',
@@ -186,6 +187,28 @@ export const site = {
       { label: 'Terms', href: '/terms' },
       { label: 'Editorial standards', href: '/editorial-standards' },
     ],
+  },
+
+  /** Search and AI visibility. */
+  seo: {
+    /** Pages listed in the sitemap, with the date their content last changed. */
+    pages: [
+      { path: '/', updated: '2026-11-25' },
+      { path: '/editorial-standards', updated: '2026-11-25' },
+      { path: '/privacy', updated: '2026-11-25' },
+      { path: '/terms', updated: '2026-11-25' },
+    ],
+    /** Subjects the show covers, from the frontier descriptions. Helps search engines and AI assistants place the show. */
+    topics: [
+      'Artificial intelligence', 'Robotics', 'Autonomous systems',
+      'Fusion energy', 'Advanced nuclear energy', 'Energy storage',
+      'Gene editing', 'Longevity', 'Regenerative medicine', 'Neurotechnology',
+      'Semiconductors', 'Nanotechnology', 'Advanced manufacturing',
+      'Space exploration', 'Space economy',
+      'Quantum computing', 'Cryptography', 'Programmable money',
+      'Science and technology', 'Deep tech',
+    ],
+    logo: '/icon-512.png',
   },
 
   notFound: {
