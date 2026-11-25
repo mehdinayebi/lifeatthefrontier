@@ -7,7 +7,7 @@ const h = site.host;
   <span class="lf-arc" aria-hidden="true" data-in></span>
   <div class="lf-host">
     {h.portrait ? (
-      <div class="lf-portrait"><img src={h.portrait} srcset={`${h.portrait} 2x, ${h.portrait3x} 3x`} alt={h.portraitAlt} width="96" height="120" loading="lazy" decoding="async" /></div>
+      <div class="lf-portrait"><img src={h.portrait} srcset={`${h.portrait} 2x, ${h.portrait3x} 3x`} alt={h.portraitAlt} width="144" height="180" loading="lazy" decoding="async" /></div>
     ) : (
       <div class="lf-portrait" role="img" aria-label={h.portraitPlaceholderLabel}><span class="lf-mono" aria-hidden="true">{h.portraitPlaceholder}</span></div>
     )}

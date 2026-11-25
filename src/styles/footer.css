@@ -1,5 +1,6 @@
 /* ---------- footer ---------- */
-.lf-foot{display:flow-root;padding:0 var(--pad) var(--sp)}
+/* Owner asked for less space under the last line (25 Nov 2026): was var(--sp). */
+.lf-foot{display:flow-root;padding:0 var(--pad) clamp(24px,3vw,40px)}
 .lf-fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:40px 48px;margin-top:clamp(64px,8vw,112px);padding-top:40px;border-top:1px solid rgba(255,248,236,.24)}
 .lf-fcol{display:flex;flex-direction:column;font-size:16px}
 .lf-fcol-brand{gap:16px}
