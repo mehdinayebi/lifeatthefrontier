@@ -180,7 +180,7 @@ export const site = {
         { name: 'Spotify', url: '' },
         { name: 'Apple Podcasts', url: '' },
         { name: 'X', url: 'https://x.com/lifeatfrontier' },
-        { name: 'LinkedIn', url: '' },
+        { name: 'LinkedIn', url: 'https://www.linkedin.com/company/lifeatthefrontier/' },
         { name: 'Instagram', url: 'https://www.instagram.com/lifeatfrontier/' },
       ] as Platform[],
     },
